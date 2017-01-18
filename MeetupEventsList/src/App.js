@@ -77,7 +77,7 @@ class App extends Component {
         <div className="feed-list">
           <br/>
         <EventFeed
-          id='tweedrfeed'
+          id='eventfeed'
           addEvent={this.addEvent}
           />
         </div>

@@ -34,16 +34,16 @@ class Events extends React.Component {
     const { events } =this.props;
     return (
       <div>
-      Meetup Name:<textarea ref={(text)=>this.edittitle=text} defaultValue={events[this.props.toShow].title} className="edit-field" /><br/>
-    Meetup Date:<input type="date" ref={(input) => this.editdate = input} defaultValue={events[this.props.toShow].eventdate} className="event-input" /><br/>
-  Meetup Details:<textarea ref={(text)=>this.editdescr=text} defaultValue={events[this.props.toShow].description} className="edit-field" /><br/>
-Who's Going:<textarea ref={(text)=>this.editpeople=text} defaultValue={events[this.props.toShow].people} className="edit-field" /><br/>
-      <button type="submit" onClick={() => this.eventEdit(this.props.toShow)} className="clean">
+        Meetup Name:<textarea ref={(text)=>this.edittitle=text} defaultValue={events[this.props.toShow].title} className="edit-field" /><br/>
+      Meetup Date:<input type="date" ref={(input) => this.editdate = input} defaultValue={events[this.props.toShow].eventdate} className="event-input" /><br/>
+        Meetup Details:<textarea ref={(text)=>this.editdescr=text} defaultValue={events[this.props.toShow].description} className="edit-field" /><br/>
+        Who's Going:<textarea ref={(text)=>this.editpeople=text} defaultValue={events[this.props.toShow].people} className="edit-field" /><br/>
+        <button type="submit" onClick={() => this.eventEdit(this.props.toShow)} className="clean">
         Save
-      </button>
-     <button type="submit" onClick={()=> this.setState({edit:!this.state.edit})}>
-       Cancel
-     </button>
+        </button>
+        <button type="submit" onClick={()=> this.setState({edit:!this.state.edit})}>
+          Cancel
+        </button>
       </div>
 
     )
@@ -55,12 +55,12 @@ Who's Going:<textarea ref={(text)=>this.editpeople=text} defaultValue={events[th
     <li className="eachLi">
       <span className="list-field">Meetup Name: </span> {events[this.props.toShow].title}<br/>
       <br/>
-    <span className="list-field">Meetup Date: </span> {events[this.props.toShow].eventdate}<br/>
-    <br/>
-  <span className="list-field">Meetup Details: </span> <p>{events[this.props.toShow].description}</p><br/>
-  <br/>
-<span className="list-field">Who's Going?:</span>{events[this.props.toShow].people}<br/>
-    <div className="buttons">
+      <span className="list-field">Meetup Date: </span> {events[this.props.toShow].eventdate}<br/>
+      <br/>
+      <span className="list-field">Meetup Details: </span> <p>{events[this.props.toShow].description}</p><br/>
+      <br/>
+      <span className="list-field">Who's Going?: </span>{events[this.props.toShow].people}<br/>
+      <div className="buttons">
       <br/>
       <button type="submit" onClick={() => this.eventEdit(this.props.toShow)} className="clean">Edit</button>
       <button type="submit" onClick={() => this.eventDelete(this.props.toShow)} className="clean">Delete</button>
