@@ -2,14 +2,14 @@
 # <center> MEETUP EVENTS LIST </center>
 <br>
 
-![Screen Shot of the website/app](src/MeetupEvents.png)
+![Screen Shot of the website/app](src/Meetup-Events.png)
 
 
-## IMPLEMENTATION
+## Implementation
 As stated in project requirements, I used React, and made sure to use multiple components. I created four components App, Input, Events, and EventFeed.
 
 
-## TECHNOLOGIES USED
+## Technologies Used
 
 For this project I used :
 - Javascript
@@ -21,7 +21,7 @@ For this project I used :
 
 
 
-## CODE EXAMPLE FROM EVENTS COMPONENT
+## Code Example from Events Component
 
 ```javascript
 import React from 'react';

@@ -66,8 +66,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>MEETUP EVENTS LIST</h2>
-          <h5>Let's go to a Meetup!</h5>
+          <h1>MEETUP EVENTS LIST</h1>
+          <h4>Let's go to a Meetup!</h4>
         </div>
         <br/>
         <Input

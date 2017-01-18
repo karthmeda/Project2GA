@@ -34,10 +34,10 @@ class Events extends React.Component {
     const { events } =this.props;
     return (
       <div>
-      <textarea ref={(text)=>this.edittitle=text} placeholder={events[this.props.toShow].title} className="edit-field" /><br/>
-      <input type="date" ref={(input) => this.editdate = input} placeholder="Event Date" className="event-input" /><br/>
-      <textarea ref={(text)=>this.editdescr=text} placeholder={events[this.props.toShow].description} className="edit-field" /><br/>
-      <textarea ref={(text)=>this.editpeople=text} placeholder={events[this.props.toShow].people} className="edit-field" /><br/>
+      Meetup Name:<textarea ref={(text)=>this.edittitle=text} defaultValue={events[this.props.toShow].title} className="edit-field" /><br/>
+    Meetup Date:<input type="date" ref={(input) => this.editdate = input} defaultValue={events[this.props.toShow].eventdate} className="event-input" /><br/>
+  Meetup Details:<textarea ref={(text)=>this.editdescr=text} defaultValue={events[this.props.toShow].description} className="edit-field" /><br/>
+Who's Going:<textarea ref={(text)=>this.editpeople=text} defaultValue={events[this.props.toShow].people} className="edit-field" /><br/>
       <button type="submit" onClick={() => this.eventEdit(this.props.toShow)} className="clean">
         Save
       </button>
@@ -57,10 +57,11 @@ class Events extends React.Component {
       <br/>
     <span className="list-field">Meetup Date: </span> {events[this.props.toShow].eventdate}<br/>
     <br/>
-  <span className="list-field">Meetup Details: </span> {events[this.props.toShow].description}<br/>
+  <span className="list-field">Meetup Details: </span> <p>{events[this.props.toShow].description}</p><br/>
   <br/>
-<span className="list-field">Who's Going?:</span> {events[this.props.toShow].people}
+<span className="list-field">Who's Going?:</span>{events[this.props.toShow].people}<br/>
     <div className="buttons">
+      <br/>
       <button type="submit" onClick={() => this.eventEdit(this.props.toShow)} className="clean">Edit</button>
       <button type="submit" onClick={() => this.eventDelete(this.props.toShow)} className="clean">Delete</button>
     </div>

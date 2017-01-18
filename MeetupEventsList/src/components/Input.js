@@ -16,6 +16,7 @@ class Input extends Component {
         eventdate:moment(this.eventsdate.value).format('MM/DD/YYYY'),
         people:this.eventspeople.value,
         description:this.eventsdesc.value,
+
       }
 
     }).then( () => {

@@ -8,14 +8,87 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
-  color: white;
+  width:100%;
+  color: black;
+  display:inline-block;
+  text-align: center;
+ background-color:#db5334;
+margin-bottom: 20px;
 }
 
 .App-intro {
   font-size: large;
+}
+
+/*li{
+  border:1px solid black;
+  background-color:lightgrey;
+  margin-top: .8rem;
+  margin-bottom: .8rem;
+  height: 2rem;
+  line-height: 0px;
+  border-radius: 5px;
+  padding-top: 10px;
+  vertical-align: middle;
+  text-align:center;
+
+}
+
+li:hover{
+  background-color: lightblue;
+
+}*/
+
+.list-of-events {
+  display:flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  margin-left: 30px;
+  margin-right: 30px;
+
+
+}
+
+.event-input{
+  width: 10rem;
+  height: 1.5rem;
+  border: none;
+  border-bottom: 1px solid red;
+}
+
+.eachLi{
+  /*display:flex;*/
+  /*justify-content: center;*/
+
+  list-style:none;
+  padding:15px;
+  border:1px solid black;
+  background-color: lightgrey;
+
+
+}
+
+
+
+.buttons {
+  /*align-self:flex-end;*/
+}
+
+#button:hover{
+  background-color: lightblue;
+}
+.eachLi:hover{
+  background-color: lightblue;
+}
+
+.clean {
+  color:black;
+  background-color: indianred;
+  border:none;
+  margin:2px;
+
 }
 
 @keyframes App-logo-spin {
