@@ -41,14 +41,17 @@ class App extends Component {
     if(this.state.events){
       let feed=Object.keys(this.state.events)
       .reverse()
+    //   .sort(function(a, b){
+    // let dateA=new Date(a.eventdate), dateB=new Date(b.eventdate)
+    // return dateB-dateA})
       .map((key,i) => {
         console.log(key)
         return (
           <Events
             key={key}
+            toShow={key}
             getEvents={this.getEvents}
             addEvent={this.addEvent}
-            toShow={key}
             events={this.state.events} />
               )
       })

@@ -2,7 +2,7 @@
 # <center> MEETUP EVENTS LIST </center>
 <br>
 
-![Screen Shot of the game](src/wordguess.png)
+![Screen Shot of the website/app](src/MeetupEvents.png)
 
 
 ## IMPLEMENTATION
@@ -15,6 +15,7 @@ For this project I used :
 - Javascript
 - React
 - Axios
+- Moment
 - HTML
 - CSS
 

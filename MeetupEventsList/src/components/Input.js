@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 
 
@@ -12,12 +13,9 @@ class Input extends Component {
       url: `https://meetupevents-b6661.firebaseio.com/.json`,
       data:{
         title:this.eventstitle.value,
-        eventdate:this.eventsdate.value,
-        description:this.eventsdesc.value,
+        eventdate:moment(this.eventsdate.value).format('MM/DD/YYYY'),
         people:this.eventspeople.value,
-
-
-
+        description:this.eventsdesc.value,
       }
 
     }).then( () => {
@@ -52,7 +50,7 @@ class Input extends Component {
       <input type="text" ref={(input) => this.eventspeople = input} id="people" placeholder="Who's Going?" className="event-input" />
       <br/>
       <button type="submit" onClick={()=> this.createEvent()}  id="button">
-       Share Event
+       Share Meetup
       </button>
     </div>
     )

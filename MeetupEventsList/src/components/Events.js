@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 class Events extends React.Component {
   constructor(){
@@ -18,10 +19,10 @@ class Events extends React.Component {
   eventEdit(key) {
     this.setState({edit: !this.state.edit})
     axios.patch(`https://meetupevents-b6661.firebaseio.com/${key}.json`, {
-      title:this.text1.value,
-      eventdate:this.editdate.value,
-      description:this.text3.value,
-      people:this.text4.value,
+      title:this.edittitle.value,
+      eventdate:moment(this.editdate.value).format('MM/DD/YYYY'),
+      people:this.editpeople.value,
+      description:this.editdescr.value,
     })
     .then((res) => {
       this.props.getEvents();
@@ -33,13 +34,16 @@ class Events extends React.Component {
     const { events } =this.props;
     return (
       <div>
-      <textarea ref={(text)=>this.text1=text} placeholder={events[this.props.toShow].title} className="edit-field" />
-      <input type="date" ref={(input) => this.editdate = input} placeholder="Event Date" className="event-input" />
-      <textarea ref={(text)=>this.text3=text} placeholder={events[this.props.toShow].description} className="edit-field" />
-      <textarea ref={(text)=>this.text4=text} placeholder={events[this.props.toShow].people} className="edit-field" />
+      <textarea ref={(text)=>this.edittitle=text} placeholder={events[this.props.toShow].title} className="edit-field" /><br/>
+      <input type="date" ref={(input) => this.editdate = input} placeholder="Event Date" className="event-input" /><br/>
+      <textarea ref={(text)=>this.editdescr=text} placeholder={events[this.props.toShow].description} className="edit-field" /><br/>
+      <textarea ref={(text)=>this.editpeople=text} placeholder={events[this.props.toShow].people} className="edit-field" /><br/>
       <button type="submit" onClick={() => this.eventEdit(this.props.toShow)} className="clean">
         Save
       </button>
+     <button type="submit" onClick={()=> this.setState({edit:!this.state.edit})}>
+       Cancel
+     </button>
       </div>
 
     )
@@ -49,10 +53,13 @@ class Events extends React.Component {
     const { events } = this.props;
     return (
     <li className="eachLi">
-      {events[this.props.toShow].title}<br/>
-    {events[this.props.toShow].eventdate}<br/>
-    {events[this.props.toShow].description}<br/>
-  {events[this.props.toShow].people}
+      <span className="list-field">Meetup Name: </span> {events[this.props.toShow].title}<br/>
+      <br/>
+    <span className="list-field">Meetup Date: </span> {events[this.props.toShow].eventdate}<br/>
+    <br/>
+  <span className="list-field">Meetup Details: </span> {events[this.props.toShow].description}<br/>
+  <br/>
+<span className="list-field">Who's Going?:</span> {events[this.props.toShow].people}
     <div className="buttons">
       <button type="submit" onClick={() => this.eventEdit(this.props.toShow)} className="clean">Edit</button>
       <button type="submit" onClick={() => this.eventDelete(this.props.toShow)} className="clean">Delete</button>
